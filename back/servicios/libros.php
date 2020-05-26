@@ -20,9 +20,9 @@ $result = mysqli_query($connection,$query);
 
 if(!$result){
     die("No se pudo ingresar");
-}else{
-    echo "Insertado";
 }
+    echo $query;
+
 
 //Buscar libros
 

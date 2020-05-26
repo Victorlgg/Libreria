@@ -1,8 +1,8 @@
 
 $(document).ready(function(){
-	$("#taskresult").hide();
-	listarTareas();
-	let edit = false;
+	//$("#taskresult").hide();
+	//listarTareas();
+	//let edit = false;
 	// console.log("hello world jquery");
 	// console.log("Jquery is working");
 
@@ -17,12 +17,12 @@ $("#book-add").submit( function(e){
         year: $('#book-year').val(),
         idCategoria: $('#book-idCat').val(),
         precio: $('#book-precio').val()
-    }
-    console.log(postData);
+    };
+    //console.log(postData);
 
-    $.post("back/libros.php", postData, function(response){
-        alert(response);
-
+    $.post("back/servicios/libros.php", postData, function(response){
+        //alert(response);
+        console.log(response);
     });
 });
 
@@ -30,6 +30,7 @@ $("#book-add").submit( function(e){
 //Codigo fazt tutorial (Borrar)
 
 //BUSCAR
+/*
 	$("#search").keyup(function(e) {
 		let search = $("#search").val();
 		if($('#search').val() && search){
@@ -59,6 +60,8 @@ $("#book-add").submit( function(e){
 	})
 //FIN BUSCAR
 
+*/
+/*
 	//AGREGAR
 	$('#task-form').submit( function(e) {
 		e.preventDefault();
@@ -81,6 +84,10 @@ $("#book-add").submit( function(e){
 		});
 		
 //
+
+*/
+
+/*
 function listarTareas(){
 	// $("#tareas").html();
 	$.ajax({
@@ -103,8 +110,9 @@ function listarTareas(){
 			$("#tareas").html(template);
 		}
 		})
-}
-	
+}*/
+    
+/*
 	$(document).on("click",".borrar-Tarea", function(){ 
 		if(confirm("Estas seguro?")){
 
@@ -120,9 +128,10 @@ function listarTareas(){
 		}
 		
 		
-	})
+	})*/
 
-//Editar
+//Editar 
+/*
 $(document).on("click",".task-item", function(){
 	let element = $(this)[0].parentElement.parentElement;
 	let id = $(element).attr("taskid");
@@ -137,7 +146,7 @@ $(document).on("click",".task-item", function(){
 		$("#submitbtn").html("Actualizar tarea");
 	} )
 
-})
+})*/
 
 
 
