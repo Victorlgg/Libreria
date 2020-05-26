@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 
 //Agregar Libro
-$("#Book-add").submit( function(e){
+$("#book-add").submit( function(e){
     e.preventDefault();
     const postData = {
         nombre: $('#book-nombre').val() ,
@@ -18,6 +18,7 @@ $("#Book-add").submit( function(e){
         idCategoria: $('#book-idCat').val(),
         precio: $('#book-precio').val()
     }
+    console.log(postData);
 
     $.post("back/libros.php", postData, function(response){
         alert(response);
