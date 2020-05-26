@@ -18,12 +18,38 @@ $("#book-add").submit( function(e){
         idCategoria: $('#book-idCat').val(),
         precio: $('#book-precio').val()
     };
-    //console.log(postData);
+    console.log(JSON.stringify(postData));
 
+	
+	$.ajax({
+		url:'back/servicios/libros.php',
+		type: 'POST',
+		 //datatype: "JSON",
+		data: JSON.stringify(postData),
+		 //crossDomain: true,
+		success: function(response) {
+			let answer = response.result;
+				alert("respuesta: "+answer);
+
+			
+		},
+		error: function(e) {
+			alert('Error'+JSON.stringify(e));
+		 }  
+	});
+
+	/*
+
+	var xhttp= xhttp.open("POST", "back/servicios/libros.php", true);
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send(postData);*/
+
+
+	 /*POST peticion
     $.post("back/servicios/libros.php", postData, function(response){
-        //alert(response);
+        alert(response.name);
         console.log(response);
-    });
+    });*/
 });
 
 
