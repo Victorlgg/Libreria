@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2020 at 04:05 AM
+-- Generation Time: May 26, 2020 at 05:15 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -77,6 +77,14 @@ CREATE TABLE `libros` (
   `idCategoria` int(11) NOT NULL,
   `precio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `libros`
+--
+
+INSERT INTO `libros` (`idLibro`, `nombre`, `autor`, `editorial`, `year`, `idCategoria`, `precio`) VALUES
+(1, 'a', 'a', 'a', 1, 1, 2),
+(2, 'asd', 'asd', 'ddd', 123, 1, 12);
 
 -- --------------------------------------------------------
 
@@ -190,6 +198,12 @@ ALTER TABLE `categoria`
 --
 ALTER TABLE `compras`
   MODIFY `idCompra` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `libros`
+--
+ALTER TABLE `libros`
+  MODIFY `idLibro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `publicacion`
