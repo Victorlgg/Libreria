@@ -13,12 +13,16 @@ $editorial = $_POST["editorial"];
 $year = $_POST["year"];
 $idCategoria = $_POST["idCategoria"];
 $precio = $_POST["precio"];
+//Falta modificar el formato de fecha en el query
 $query = "INSERT INTO `libros`(`nombre`, `autor`, `editorial`, `year`, `idCategoria`, `precio`)
  VALUES ('$nombre','$autor','$editorial','$year',$idCategoria,$precio)";
 $result = mysqli_query($connection,$query);
 
+
 if(!$result){
     die("No se pudo ingresar");
+}else{
+    echo "Insertado";
 }
 
 //Buscar libros
