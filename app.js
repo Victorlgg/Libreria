@@ -18,7 +18,7 @@ $("#book-add").submit( function(e){
         idCategoria: $('#book-idCat').val(),
         precio: $('#book-precio').val()
     };
-    console.log(JSON.stringify(postData));
+    //console.log(JSON.stringify(postData));
 
 	
 	$.ajax({
@@ -32,7 +32,7 @@ $("#book-add").submit( function(e){
 			},
 			201: function (response) {
 			  //creado
-			  alert("Datos ingresados");
+			  //alert("Datos ingresados");
 			}
 		  },
 		 //crossDomain: true,
