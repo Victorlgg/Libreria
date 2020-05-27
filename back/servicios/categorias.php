@@ -36,7 +36,7 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     http_response_code(200);
 
     //Respuesta
-    echo json_encode($categories);
+    echo json_encode($categories["records"]);
 
 /* $data = json_encode(file_get_contents("php://input"));
 

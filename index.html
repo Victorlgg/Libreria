@@ -3,7 +3,7 @@
 
 <head>
     <link rel="icon" type="image/png" href="icons8-lazo-marcapaginas-100.png">
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libreria</title>
@@ -15,14 +15,14 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a href="#" class="navbar-brand">Libreria virtual</a>
-    
+
         <ul class="navbar-nav ml-auto">
-        <form class="form-inline my-2 my-lg-0">
-            <input type="search" id="search" class="form-control mr-sm-2" placeholder="Buscar Libros">
-            <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </ul>
-    
+            <form class="form-inline my-2 my-lg-0">
+                <input type="search" id="search" class="form-control mr-sm-2" placeholder="Buscar Libros">
+                <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </ul>
+
     </nav>
 
     <div class="container p-4">
@@ -33,26 +33,29 @@
                         <h3 class="card-title">Nuevo libro</h3>
                         <form id="book-add" method="post">
                             <div class="form-group" method="post">
-                                <input type="text" name="nombre" id="book-nombre" required placeholder="nombre"
+                                <input type="text" name="nombre" id="book-nombre" required placeholder="Nombre del libro"
                                     class="form-control">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="autor" id="book-autor" placeholder="autor" required 
+                                <input type="text" name="autor" id="book-autor" placeholder="Autor" required
                                     class="form-control">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="editorial" id="book-editorial" placeholder="editorial" required
+                                <input type="text" name="editorial" id="book-editorial" placeholder="Editorial" required
                                     class="form-control">
                             </div>
                             <div class="form-group">
-                                <input max="4" type="number" name="año" id="book-year"  placeholder="año"  required class="form-control">
+                                <input max="4" type="number" name="año" id="book-year" placeholder="Año" required
+                                    class="form-control">
                             </div>
                             <div class="form-group">
-                                <input type="number" name="idCategoria" id="book-idCat" value="1" required class="form-control" hidden>
+                                <select id="book-idCat" class="form-control"></select>
+                                <!-- <input type="number" name="idCategoria" id="book-idCat" value="1" required
+                                    class="form-control" > -->
                             </div>
                             <div class="form-group">
-                                <input type="number" name="precio" id="book-precio" placeholder="precio"
-                                required class="form-control">
+                                <input type="number" name="precio" id="book-precio" placeholder="Precio" required
+                                    class="form-control">
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-danger btn-block text-center">Guardar
@@ -67,7 +70,8 @@
             </div>
 
     </div>
-    </div>
+
+    <div id="tareas"></div>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"

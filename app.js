@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+	listarCategorias();
 	//$("#taskresult").hide();
 	//listarTareas();
 	//let edit = false;
@@ -19,12 +20,9 @@ $("#book-add").submit( function(e){
         precio: $('#book-precio').val()
     };
     //console.log(JSON.stringify(postData));
-
-	
 	$.ajax({
 		url:'back/servicios/libros.php',
 		type: 'POST',
-		 //datatype: "JSON",
 		data: JSON.stringify(postData),
 		statusCode: {
 			404: function (data) {
@@ -45,11 +43,7 @@ $("#book-add").submit( function(e){
 		 }   */
 	});
 
-	/*
-
-	var xhttp= xhttp.open("POST", "back/servicios/libros.php", true);
-xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-xhttp.send(postData);*/
+	
 
 
 	 /*POST peticion
@@ -59,6 +53,25 @@ xhttp.send(postData);*/
     });*/
 });
 
+function listarCategorias(){
+	// $("#tareas").html();
+	$.ajax({
+		url: "back/servicios/categorias.php",
+		type: "GET",
+		success: function(response) {
+			console.log(response);
+			/* let jsonTask = JSON.parse(response); */
+			let jsonTask = response;
+			let template='';
+			jsonTask.forEach(task =>{
+				template+=`
+				<option value=${task.idCategoria}>${task.descripcion}</option>`
+			});
+			
+			$("#book-idCat").html(template);
+		}
+		})
+}
 
 //Codigo fazt tutorial (Borrar)
 
