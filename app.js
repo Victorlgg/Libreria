@@ -26,16 +26,23 @@ $("#book-add").submit( function(e){
 		type: 'POST',
 		 //datatype: "JSON",
 		data: JSON.stringify(postData),
+		statusCode: {
+			404: function (data) {
+			  //error
+			},
+			201: function (response) {
+			  //creado
+			  alert("Datos ingresados");
+			}
+		  },
 		 //crossDomain: true,
 		success: function(response) {
 			let answer = response.result;
 				alert("respuesta: "+answer);
-
-			
-		},
-		error: function(e) {
+		}
+		/* error: function(e) {
 			alert('Error'+JSON.stringify(e));
-		 }  
+		 }   */
 	});
 
 	/*
