@@ -65,6 +65,25 @@ $("#book-search").submit( function(e){
 		//console.log(response);
 		if(response.result){
 			alert(response.result);
+		}else{
+			console.log(response);
+			let jsonBook = response;
+			let template='';
+
+			jsonBook.forEach(task=>{
+				template+=`<tr>
+				<td>${task.nombre}</td>
+				<td>${task.autor}</td>
+				<td>${task.editorial}</td>
+				<td>${task.year}</td>
+				<td>${task.descripcion}</td>
+				<td>${task.precio}</td>
+				</tr>
+				`;
+			
+			});
+			$("#book-tbody").html(template);
+
 		}
 
 		

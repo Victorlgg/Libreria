@@ -33,15 +33,15 @@
                         <h3 class="card-title">Nuevo libro</h3>
                         <form id="book-add" method="post">
                             <div class="form-group" method="post">
-                                <input type="text" name="nombre" id="book-nombre" required placeholder="Nombre del libro"
+                                <input type="text" name="nombre" maxlength="30" id="book-nombre" required placeholder="Nombre del libro"
                                     class="form-control">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="autor" id="book-autor" placeholder="Autor" required
+                                <input type="text" maxlength="30" name="autor" id="book-autor" placeholder="Autor" required
                                     class="form-control">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="editorial" id="book-editorial" placeholder="Editorial" required
+                                <input type="text" name="editorial" maxlength="30" id="book-editorial" placeholder="Editorial" required
                                     class="form-control">
                             </div>
                             <div class="form-group">
@@ -52,7 +52,7 @@
                                 <select id="book-idCat" class="form-control"></select>
                             </div>
                             <div class="form-group">
-                                <input type="number" name="precio" id="book-precio" placeholder="Precio" required
+                                <input type="number" name="precio" max="11" id="book-precio" placeholder="Precio" required
                                     class="form-control">
                             </div>
                             <div class="form-group">
@@ -64,7 +64,6 @@
                         </form>
                     </div>
                 </div>
-
             </div>
 
             <div class="col-md-6">
@@ -73,15 +72,15 @@
                         <h3 class="card-title">Buscar libro</h3>
                         <form id="book-search" method="post">
                             <div class="form-group" method="post">
-                                <input type="text" name="nombre" id="book-s-nombre"  placeholder="Nombre del libro"
+                                <input type="text" name="nombre" maxlength="30" id="book-s-nombre"  placeholder="Nombre del libro"
                                     class="form-control">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="autor" id="book-s-autor" placeholder="Autor" 
+                                <input type="text" name="autor" maxlength="30" id="book-s-autor" placeholder="Autor" 
                                     class="form-control">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="editorial" id="book-s-editorial" placeholder="Editorial" 
+                                <input type="text" name="editorial" maxlength="30" id="book-s-editorial" placeholder="Editorial" 
                                     class="form-control">
                             </div>
                             <div class="form-group">
@@ -94,7 +93,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <input type="number" name="precio" id="book-s-precio" placeholder="Precio" 
+                                <input type="number" name="precio" max="11" id="book-s-precio" placeholder="Precio" 
                                     class="form-control">
                             </div>
                             <div class="form-group">
@@ -109,7 +108,28 @@
 
             </div>
     </div>
+    
+    <div class="container p-2">
+        <div class="row-12">
+            <div class="row-md-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">editorial</th>
+                            <th scope="col">año</th>
+                            <th scope="col">categoria</th>
+                            <th scope="col">precio</th>
+                          </tr>
+                    </thead>
+                    <tbody id="book-tbody">
 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     <div id="tareas"></div>
 
 
