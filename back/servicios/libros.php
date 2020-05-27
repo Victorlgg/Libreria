@@ -22,40 +22,69 @@ $libro = new Libro($db);
 
 //get post data
 $data = json_decode(file_get_contents("php://input"));
+//var_dump($data);
 
-if(
+//Validar que es busqueda
+if (!empty($data->search)) {
+    $stmt = $libro->search($data);
+
+    $num = $stmt->rowCount();
+    //Total resultados 
+    //echo $num;
+    $json = array();
+    if ($num > 0) {
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $json[] = array(
+                "idLibro" => $row["idLibro"],
+                "nombre" => $row["nombre"],
+                "autor" => $row["autor"],
+                "editorial" => $row["editorial"],
+                "year" => $row["year"],
+                "idCategoria" => $row["idCategoria"],
+                "precio" => $row["precio"],
+                "descripcion" => $row["descripcion"]
+
+            );
+        }
+        echo json_encode($json);
+        //200 ok
+        http_response_code(200);
+        //echo json_encode($json);
+    }else{
+        echo json_encode(array("result" => "Nada encontrado"));
+    }
+} elseif (
+    //Si es una insercion
     !empty($data->nombre) &&
     !empty($data->autor) &&
     !empty($data->editorial) &&
     !empty($data->year) &&
     !empty($data->idCategoria) &&
-    !empty($data->precio) 
-){
-    $libro->nombre=$data->nombre;
-    $libro->autor=$data->autor;
-    $libro->editorial=$data->editorial;
-    $libro->year=$data->year;
-    $libro->idCategoria=$data->idCategoria;
-    $libro->precio=$data->precio;
+    !empty($data->precio)
+) {
+    $libro->nombre = $data->nombre;
+    $libro->autor = $data->autor;
+    $libro->editorial = $data->editorial;
+    $libro->year = $data->year;
+    $libro->idCategoria = $data->idCategoria;
+    $libro->precio = $data->precio;
 
-    if($libro->create()){
+    if ($libro->create()) {
         //Response code 201 - created
         http_response_code(201);
 
-        echo json_encode(array("result"=>"Registrado exitosamente"));
-    }else{
+        echo json_encode(array("result" => "Registrado exitosamente"));
+    } else {
         //503 service unavailable
         http_response_code(503);
 
-        echo json_encode(array("result"=>"Registro fallido"));
-
+        echo json_encode(array("result" => "Registro fallido"));
     }
-
-}else{
+} else {
     //400 - Bad Request
     http_response_code(400);
-    
-    echo json_encode(array("result"=>"Faltan datos"));
+
+    echo json_encode(array("result" => "Faltan datos"));
 }
 
 

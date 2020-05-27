@@ -19,7 +19,6 @@ $("#book-add").submit( function(e){
         idCategoria: $('#book-idCat').val(),
         precio: $('#book-precio').val()
     };
-    //console.log(JSON.stringify(postData));
 	$.ajax({
 		url:'back/servicios/libros.php',
 		type: 'POST',
@@ -42,10 +41,6 @@ $("#book-add").submit( function(e){
 			alert('Error'+JSON.stringify(e));
 		 }   */
 	});
-
-	
-
-
 	 /*POST peticion
     $.post("back/servicios/libros.php", postData, function(response){
         alert(response.name);
@@ -53,13 +48,38 @@ $("#book-add").submit( function(e){
     });*/
 });
 
+//Buscar Libros
+$("#book-search").submit( function(e){
+	e.preventDefault();
+	const postData ={
+		search: "si",
+		nombre: $('#book-s-nombre').val() ,
+        autor: $('#book-s-autor').val(),
+        editorial: $('#book-s-editorial').val(),
+        year: $('#book-s-year').val(),
+        idCategoria: $('#book-s-idCat').val(),
+        precio: $('#book-precio').val()
+	};
+	//console.log(postData);
+	$.post("back/servicios/libros.php",JSON.stringify(postData), function(response){
+		//console.log(response);
+		if(response.result){
+			alert(response.result);
+		}
+
+		
+		//alert(response);
+	});
+});
+
+
 function listarCategorias(){
-	// $("#tareas").html();
+	
 	$.ajax({
 		url: "back/servicios/categorias.php",
 		type: "GET",
 		success: function(response) {
-			console.log(response);
+			//console.log(response);
 			/* let jsonTask = JSON.parse(response); */
 			let jsonTask = response;
 			let template='';
@@ -69,6 +89,7 @@ function listarCategorias(){
 			});
 			
 			$("#book-idCat").html(template);
+			$("#book-s-idCat").append(template);
 		}
 		})
 }

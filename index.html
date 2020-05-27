@@ -13,21 +13,21 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a href="#" class="navbar-brand">Libreria virtual</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center ">
+        <a href="#" class="navbar-brand ">Libreria virtual</a>
 
-        <ul class="navbar-nav ml-auto">
+        <!-- <ul class="navbar-nav ml-auto">
             <form class="form-inline my-2 my-lg-0">
                 <input type="search" id="search" class="form-control mr-sm-2" placeholder="Buscar Libros">
                 <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
             </form>
-        </ul>
+        </ul> -->
 
     </nav>
 
     <div class="container p-4">
         <div: class="row">
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-title">Nuevo libro</h3>
@@ -50,8 +50,6 @@
                             </div>
                             <div class="form-group">
                                 <select id="book-idCat" class="form-control"></select>
-                                <!-- <input type="number" name="idCategoria" id="book-idCat" value="1" required
-                                    class="form-control" > -->
                             </div>
                             <div class="form-group">
                                 <input type="number" name="precio" id="book-precio" placeholder="Precio" required
@@ -69,6 +67,47 @@
 
             </div>
 
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Buscar libro</h3>
+                        <form id="book-search" method="post">
+                            <div class="form-group" method="post">
+                                <input type="text" name="nombre" id="book-s-nombre"  placeholder="Nombre del libro"
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="autor" id="book-s-autor" placeholder="Autor" 
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="editorial" id="book-s-editorial" placeholder="Editorial" 
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input max="4" type="number" name="año" id="book-s-year" placeholder="Año" 
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <select id="book-s-idCat" class="form-control">
+                                    <option selected value> -- Buscar por categoria -- </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" name="precio" id="book-s-precio" placeholder="Precio" 
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-danger btn-block text-center">Buscar
+                                    Libro</button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
     </div>
 
     <div id="tareas"></div>
