@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2020 at 05:15 AM
+-- Generation Time: May 30, 2020 at 03:37 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -38,7 +38,13 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`idCategoria`, `descripcion`) VALUES
-(1, 'Fantasia');
+(1, 'Fantasia'),
+(2, 'Historia'),
+(3, 'Ciencia ficcion'),
+(4, 'Economia'),
+(5, 'Aventura'),
+(6, 'novela'),
+(7, 'romance');
 
 -- --------------------------------------------------------
 
@@ -83,8 +89,50 @@ CREATE TABLE `libros` (
 --
 
 INSERT INTO `libros` (`idLibro`, `nombre`, `autor`, `editorial`, `year`, `idCategoria`, `precio`) VALUES
-(1, 'a', 'a', 'a', 1, 1, 2),
-(2, 'asd', 'asd', 'ddd', 123, 1, 12);
+(1, 'a', 'a', 'a', 2020, 2, 128992),
+(2, 'asd', 'asd', 'ddd', 1213, 7, 542405),
+(3, 'asd', 'ddff', 'fff', 1848, 7, 475051),
+(4, 'asd', 'ddff', 'fff', 1460, 5, 698041),
+(5, 'prueba', 'desde', 'postman', 1660, 7, 215053),
+(6, 'asd', 'asd', 'asd', 1797, 4, 731140),
+(7, 'asd', 'asd', 'asd', 1888, 5, 260542),
+(8, 'asd', 'asd', 'asd', 1928, 1, 859292),
+(9, 'asd', 'asd', 'ddd', 1858, 7, 764834),
+(10, 'asd', 'asd', 'asd', 1387, 6, 296295),
+(11, 'ddd', 'ddd', 'ddd', 1261, 7, 936972),
+(12, 'xd', 'xd', 'xd', 2013, 4, 145974),
+(13, 'xd', 'xd', 'xd', 288, 5, 568957),
+(14, '123', '123', '123', 1260, 5, 556864),
+(15, 'aaa', 'aaa', 'aaa', 1297, 4, 127450),
+(16, 'ddd', 'ddd', 'ddd', 585, 5, 716660),
+(17, 'asd', 'asd', 'asd', 955, 4, 450947),
+(18, 'aaa', 'aadd', 'dds', 900, 5, 54756),
+(19, 'asd', 'asd', 'asd', 1537, 6, 670941),
+(20, 'asd', 'asd', '123', 845, 1, 440438),
+(21, 'ss', 'sad', 'dsd', 1533, 5, 139368),
+(22, 'ddd', 'ddd', 'dd', 991, 1, 225524),
+(23, 'eee', 'eee', '33e', 256, 4, 659517),
+(24, 'asd', 'asd', 'dd', 230, 3, 771014),
+(25, 'dddd', 'ddd', 'ddd', 281, 4, 926521),
+(26, 'prueba', 'desde', 'postman', 615, 7, 469563),
+(27, 'prueba', 'desde', 'postman', 111, 4, 418252),
+(36, 'prueba', 'desde', 'postman', 634, 5, 632570),
+(37, 'prueba', 'desde ', 'app', 716, 7, 58094),
+(38, 'prueba', 'desde', 'app', 1577, 4, 142762),
+(39, 'aaasds', 'sdsdas', 'asdas', 1600, 7, 489529),
+(40, 'ttuyt', 'tytyt', 'ytytyt', 1149, 7, 169357),
+(41, 'asd', 'asd', 'ddd', 846, 2, 228201),
+(42, 'ggg', 'gggg', 'ggg', 683, 7, 582932),
+(43, 'hhhh', 'hhhh', 'hhh5', 778, 6, 380059),
+(44, 'kkk', 'kkk', 'kkk', 1741, 5, 101498),
+(45, 'asd4', 'ddd', 'd', 213, 4, 217314),
+(46, 'prueba', 'desde', 'postman', 1801, 6, 732079),
+(47, 'prueba', 'desde', 'postman', 188, 4, 258451),
+(48, 'DD', 'DD', 'DDD', 1497, 6, 846017),
+(49, 'DD', 'DD', 'DDD', 762, 4, 704736),
+(50, 'ddd', 'ddd', 'ddd', 1240, 1, 935629),
+(51, 'nueva ruta', 'nueva ruta', 'nueva ruta', 1794, 6, 713936),
+(52, 'localgh', 'localgh', 'localgh', 1111, 6, 712792);
 
 -- --------------------------------------------------------
 
@@ -191,7 +239,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `idCategoria` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idCategoria` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `compras`
@@ -203,7 +251,7 @@ ALTER TABLE `compras`
 -- AUTO_INCREMENT for table `libros`
 --
 ALTER TABLE `libros`
-  MODIFY `idLibro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idLibro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `publicacion`
