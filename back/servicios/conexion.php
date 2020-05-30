@@ -1,9 +1,11 @@
 <?php
+include("../config/configDB.php");
 class Conexion{
-    private $host = "localhost";
-    private $db_name = "libreria";
-    private $username = "root";
-    private $password = "";
+    
+    private $host = DBHOST;
+    private $db_name = DBNAME;
+    private $username = DBUSER;
+    private $password = DBPWD;
     public $conn;
 
     // get the database connection
